@@ -7,21 +7,21 @@ import {
 } from "./controller/session.controller";
 import { validateRequest, requiresUser } from "./middleware";
 import {
-  createUserSchema,
-  createUserSessionSchema,
-} from "./schema/user.schema";
+  createUserValidationSchema,
+  createUserSessionValidationSchema,
+} from "./validator/user.validator";
 import postsRouter from "./routes/api.posts.routes";
 
 export default function (app: Express) {
   app.get("/healthcheck", (req: Request, res: Response) => res.sendStatus(200));
 
   // Register user
-  app.post("/api/users", validateRequest(createUserSchema), createUserHandler);
+  app.post("/api/users", validateRequest(createUserValidationSchema), createUserHandler);
 
   // Login
   app.post(
     "/api/sessions",
-    validateRequest(createUserSessionSchema),
+    validateRequest(createUserSessionValidationSchema),
     createUserSessionHandler
   );
 

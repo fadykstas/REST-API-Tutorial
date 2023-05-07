@@ -1,6 +1,7 @@
 import { object, string, ref } from "yup";
+import {createPostValidationSchema} from "./post.validator";
 
-export const createUserSchema = object({
+export const createUserValidationSchema = object({
   body: object({
     name: string().required("Name is required"),
     password: string()
@@ -17,7 +18,7 @@ export const createUserSchema = object({
   }),
 });
 
-export const createUserSessionSchema = object({
+export const createUserSessionValidationSchema = object({
   body: object({
     password: string()
       .required("Password is required")

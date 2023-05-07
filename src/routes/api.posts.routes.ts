@@ -7,10 +7,10 @@ import {
 } from "../controller/post.controller";
 import { validateRequest, requiresUser } from "../middleware";
 import {
-    createPostSchema,
-    updatePostSchema,
+    createPostValidationSchema,
+    updatePostValidationSchema,
     deletePostSchema,
-} from "../schema/post.schema";
+} from "../validator/post.validator";
 
 export default function (app: Express) {
     const postsRouter = Router();
@@ -18,14 +18,14 @@ export default function (app: Express) {
     // Create a post
     postsRouter.post(
         "/",
-        [requiresUser, validateRequest(createPostSchema)],
+        [requiresUser, validateRequest(createPostValidationSchema)],
         createPostHandler
     );
 
     // Update a post
     postsRouter.put(
         "/:postId",
-        [requiresUser, validateRequest(updatePostSchema)],
+        [requiresUser, validateRequest(updatePostValidationSchema)],
         updatePostHandler
     );
 

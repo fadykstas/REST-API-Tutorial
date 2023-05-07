@@ -15,11 +15,11 @@ const params = {
   }),
 };
 
-export const createPostSchema = object({
+export const createPostValidationSchema = object({
   ...payload,
 });
 
-export const updatePostSchema = object({
+export const updatePostValidationSchema = object({
   ...params,
   ...payload,
 });

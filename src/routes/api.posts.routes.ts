@@ -1,4 +1,4 @@
-import { Express, Request, Response, Router } from "express";
+import { Express, Router } from "express";
 import {
     createPostHandler,
     updatePostHandler,

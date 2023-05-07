@@ -1,10 +1,4 @@
 import { Express, Request, Response } from "express";
-import {
-  createPostHandler,
-  updatePostHandler,
-  getPostHandler,
-  deletePostHandler,
-} from "./controller/post.controller";
 import { createUserHandler } from "./controller/user.controller";
 import {
   createUserSessionHandler,
@@ -16,11 +10,6 @@ import {
   createUserSchema,
   createUserSessionSchema,
 } from "./schema/user.schema";
-import {
-  createPostSchema,
-  updatePostSchema,
-  deletePostSchema,
-} from "./schema/post.schema";
 import postsRouter from "./routes/api.posts.routes";
 
 export default function (app: Express) {

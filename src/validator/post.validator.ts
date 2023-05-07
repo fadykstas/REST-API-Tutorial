@@ -1,5 +1,4 @@
 import { object, string } from "yup";
-import {updateTaskValidationSchema} from "./task.validator";
 
 const payload = {
   body: object({

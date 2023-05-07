@@ -11,6 +11,7 @@ import {
   createUserSessionValidationSchema,
 } from "./validator/user.validator";
 import apiPostsRoutes from "./routes/api.posts.routes";
+import apiTasksRoutes from "./routes/api.tasks.routes";
 
 export default function (app: Express) {
   app.get("/healthcheck", (req: Request, res: Response) => res.sendStatus(200));
@@ -33,4 +34,5 @@ export default function (app: Express) {
 
   // Mount the posts routes
   apiPostsRoutes(app); //
+  apiTasksRoutes(app);
 }

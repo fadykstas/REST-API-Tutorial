@@ -1,4 +1,5 @@
 import { object, string } from "yup";
+import {updateTaskValidationSchema} from "./task.validator";
 
 const payload = {
   body: object({
@@ -24,6 +25,6 @@ export const updatePostValidationSchema = object({
   ...payload,
 });
 
-export const deletePostSchema = object({
+export const deletePostValidationSchema = object({
   ...params,
 });

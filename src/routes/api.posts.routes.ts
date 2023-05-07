@@ -9,7 +9,7 @@ import { validateRequest, requiresUser } from "../middleware";
 import {
     createPostValidationSchema,
     updatePostValidationSchema,
-    deletePostSchema,
+    deletePostValidationSchema,
 } from "../validator/post.validator";
 
 export default function (app: Express) {
@@ -35,7 +35,7 @@ export default function (app: Express) {
     // Delete a post
     postsRouter.delete(
         "/:postId",
-        [requiresUser, validateRequest(deletePostSchema)],
+        [requiresUser, validateRequest(deletePostValidationSchema)],
         deletePostHandler
     );
 

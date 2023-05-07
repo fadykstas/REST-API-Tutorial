@@ -4,6 +4,9 @@ import log from "./logger";
 import connect from "./db/connect";
 import routes from "./routes";
 import { deserializeUser } from "./middleware";
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const port = config.get("port") as number;
 const host = config.get("host") as string;
